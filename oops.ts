@@ -32,7 +32,7 @@ console.log(p._firstName);
 //==================================================
 class Manager extends Person{
     constructor(firstName:string, lastName:string){
-        super(firstName);
+        super(firstName); // super calls parents constructor.
     }
     
     // This overrides the parent method
