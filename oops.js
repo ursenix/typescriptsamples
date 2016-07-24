@@ -1,3 +1,8 @@
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var showPerson = function (p) {
     p.firstName = p.firstName + '*';
     p.lastName = p.lastName + '--';
@@ -14,6 +19,24 @@ var Person = (function () {
 }());
 var p = new Person("Esha");
 console.log(p._firstName);
+// Extends / Inheritence
+//==================================================
+var Manager = (function (_super) {
+    __extends(Manager, _super);
+    function Manager(firstName, lastName) {
+        _super.call(this, firstName);
+    }
+    // This overrides the parent method
+    Manager.prototype.getName = function () {
+        return this._firstName;
+    };
+    return Manager;
+}(Person));
+//==================================================
+var m = new Manager("Vidya", "Senthil Kumaran");
+console.log(m.getName());
+// Class that implements IPerson interface
+//==================================================
 var Employee = (function () {
     function Employee(firstName, lastName, isGood) {
         if (lastName === void 0) { lastName = "Kumaran"; }
@@ -40,6 +63,7 @@ var Employee = (function () {
     };
     return Employee;
 }());
+//==================================================
 var emp1 = new Employee("Senthil", null, true); // null will consider as value
 var emp2 = new Employee("Shakti", undefined, false); // undefined is correct to pass
 console.log(showPerson(emp1));

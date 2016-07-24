@@ -28,7 +28,25 @@ class Person{
 var p = new Person("Esha");
 console.log(p._firstName);
 
+// Extends / Inheritence
+//==================================================
+class Manager extends Person{
+    constructor(firstName:string, lastName:string){
+        super(firstName);
+    }
+    
+    // This overrides the parent method
+    getName(){
+        return this._firstName;
+    }
+}
+//==================================================
 
+var m = new Manager("Vidya", "Senthil Kumaran");
+console.log(m.getName());
+
+// Class that implements IPerson interface
+//==================================================
 class Employee implements IPerson {
     firstName:string;
     lastName:string;
@@ -50,7 +68,7 @@ class Employee implements IPerson {
             }
         }
         else{
-            return "You're good " + this.firstName;
+            return "IsGood not defined.";
         }
             
     }
@@ -62,6 +80,7 @@ class Employee implements IPerson {
     }
     
 }
+//==================================================
 
 let emp1 = new Employee("Senthil",null,true); // null will consider as value
 let emp2 = new Employee("Shakti",undefined,false); // undefined is correct to pass
