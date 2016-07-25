@@ -80,12 +80,14 @@ var Employee = (function () {
 //==================================================
 var emp1 = new Employee("Senthil", null, true); // null will consider as value
 var emp2 = new Employee("Shakti", undefined, false); // undefined is correct to pass
+var emp3 = new Employee("Esha Rowdy");
 console.log(showPerson(emp1));
 console.log(showPerson(emp1).getName());
 console.log(showPerson(emp1).getFullName());
 console.log(showPerson(emp2));
 console.log(showPerson(emp2).getName());
 console.log(showPerson(emp2).getFullName());
+console.log(showPerson(emp3));
 //person(1); // This gives an error
 //http://stackoverflow.com/questions/12827266/get-and-set-in-typescript
 var Student = (function () {
@@ -123,3 +125,4 @@ console.log("Eligible: " + student.IsEligible());
 /// <reference path="sample.ts" />
 /// <reference path="oops.ts" />
 /// <reference path="property.ts" />
+//tsc main.ts --out app.js  -target ES5 
