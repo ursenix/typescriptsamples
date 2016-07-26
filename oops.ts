@@ -6,7 +6,7 @@ interface IPerson{
 }
 
 var showPerson = (p:IPerson):IPerson=>{
-    p.firstName = p.firstName + '*';
+    p.firstName = p.firstName + '*****';
     p.lastName = p.lastName+'--';
     return p;
 }
